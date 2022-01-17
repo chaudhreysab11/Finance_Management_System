@@ -1,0 +1,91 @@
+
+<html lang="en">
+<head>
+  <link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+<style>
+body {background: #a279ee;
+  background: -webkit-linear-gradient(to right, #3b2c47, #6441A5);
+  background: linear-gradient(to right, #2a0845, #6441A5);}
+h1   {color: #fdfdfd;
+  font-family: verdana;
+  font-size: 300%;
+  text-align: center;}
+h2 {
+    color:  #bfe9ec;
+    font-family: verdana;
+    font-size: 300%;
+    }
+#id2{
+  background:#ffbb6b;
+  color: #b96b04;
+  font-family: Times;
+  font-size: 130%;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+#id2:hover{
+  background: #ffdd55;
+}
+.row{
+  color: white;
+}
+h3 {
+        border:solid;
+        color:ghostwhite ;
+        font-family: Monaco;
+        font-size: 130%;
+
+    }
+tr{
+  color: white;
+}
+</style>
+<body>
+<h1 style="border:solid;">
+<img src="https://lms.namal.edu.pk/pluginfile.php/1/theme_alpha/customloginlogo/1630066984/namal%20logo.png">
+Namal Finance Management
+<br>
+Dashboard 
+</h1>
+<h2>
+Hi! {{empName}}
+</h2>
+<a href="/"><button id="id2">LogOut</button></a>
+<br>
+<h1> New Updates</h1>
+<br>
+{%for i in range(len(newdata))%}
+<h2 style="color:white;font-size: 200%">Post No. {{i+1}}</h2><br>
+<h3>
+<form method="POST">
+<label>
+Title: {{newdata[i][1]}}<br>
+Dated:  {{newdata[i][2]}}<br>
+Status: {{newdata[i][3]}}<br>
+Post: {{newdata[i][4]}}
+</label>
+<input type="hidden" id="Key" name="id" value={{newdata[i][0]}}>
+<button name="check" value='Accept' id="id2">Accept</button>
+<button name="check" value='Reject' id="id2">Reject</button>
+</form>
+</h3>
+{%endfor%}
+<br>
+<h1> Previous Posts</h1>
+<br>
+{%for i in range(len(data))%}
+<h2 style="color:white;font-size: 200%">Post No. {{i+1}}</h2><br>
+<h3>
+Title: {{data[i][1]}}<br>
+Dated:  {{data[i][2]}}<br>
+Status: {{data[i][3]}}<br>
+Post: {{data[i][4]}}
+{%endfor%}
+</h3>
+</body>
+</html>

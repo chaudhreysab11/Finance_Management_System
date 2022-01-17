@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>
+Login page
+</title>
+</head>
+<style>
+body {background: #6441A5;
+  background-image:url("https://lms.namal.edu.pk/pluginfile.php/1/theme_alpha/logincustombg/1630066984/lmsBG.jpg");
+            background-size:cover;
+}
+h1   {color: #ffffff;
+  font-family: verdana;
+  font-size: 300%;
+}
+form{color: #fafafa;
+  font-family: Times;
+  font-size: 130%;}
+
+#id1{border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+margin-top: 10px;}
+#id2{
+  background-color: transparent;
+  color: #f79400;
+  font-family: Times;
+  font-size: 130%;
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 10px;
+  width: max-content;
+
+}
+#id2:hover{
+  background: #ffc455;
+
+}
+
+</style>
+<body>
+<center>
+<br>
+<h1>Namal Finance Management</h1>
+<img src="https://lms.namal.edu.pk/pluginfile.php/1/theme_alpha/customloginlogo/1630066984/namal%20logo.png">
+<form action="{{ url_for('index') }}" method="POST">
+<br><input style="width: 300px;" id="id1" type="text" name="name" placeholder="Username" required /> 
+<br><input style="width: 300px;" id="id1" type="password" name="password" placeholder="Password" required />
+<br>
+<label><input id="id1" type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me <br><br></label>
+<button id="id2" type="submit"> Login</button>
+<a href="/" id="id2">Cancel</a>
+<br>
+<a href="#" style="color: #ff6b6b; margin-left: 2.5%;">Forget Password</a>
+</form>
+</center>
+</body>
+</html>
+
+
